@@ -19,8 +19,6 @@ jobs:
       - name: Install dependencies
         run: make install
       - name: Run server
-        run: make run &
-      - name: Wait for server
-        run: sleep 5
-      - name: Test if server is running
+        run: make run & sleep 5
+      - name: Test the server at localhost
         run: curl http://localhost:3000
